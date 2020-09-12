@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <a class="navbar-brand" href="#">Rick and Morty App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive>
+          <a class="nav-link" [routerLink]="['home']"><i class="fas fa-home"></i>Home</a>
+        </li>
+        <li class="nav-item" routerLinkActive>
+          <a class="nav-link" [routerLink]="['characters']"><i class="fas fa-users"></i>Characters</a>
+        </li>
+        <li class="nav-item" routerLinkActive>
+          <a class="nav-link" [routerLink]="['locations']"><i class="fas fa-map-marker-alt"></i>Locations</a>
+        </li>
+        <li class="nav-item" routerLinkActive>
+          <a class="nav-link" [routerLink]="['search-character']"><i class="fas fa-search"></i>Search Character</a>
+        </li>
+        <li class="nav-item" routerLinkActive>
+          <a class="nav-link" [routerLink]="['search-location']"><i class="fas fa-search"></i>Search Location</a>
+        </li>
+      </ul>
+    </div>
+</nav>

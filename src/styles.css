@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url('assets/background.png');
+    background-size: 1300px;
+}
+
+.puntero {
+    cursor: pointer;
+}
+
+.float {
+    animation: floating 5s infinite ease-in-out;
+}
+
+@keyframes floating {
+    50%{
+        transform: translateY(-35px);
+    }
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

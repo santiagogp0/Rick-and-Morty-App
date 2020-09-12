@@ -1,0 +1,31 @@
+<app-load *ngIf="loading"></app-load>
+
+<div class="container p-5 text-center">
+    <div class="card mx-auto" style="width: 18rem;" *ngIf="!loading">
+        <div class="card-header font-weight-bold">
+            Locations
+        </div>
+        <ul class="list-group list-group-flush animate_animated animate__fadeIn" *ngFor="let location of locationsList">
+            <li class="list-group-item font-weight-bold animate__animated animate__bounceInLeft">{{ location.name }}
+            <br>
+                <small class="card-text">Type: </small>
+                <span [ngSwitch]="location.type" >
+                    <span *ngSwitchCase="'Planet'" class="badge badge-pill badge-dark">{{ location.type }}</span>
+                    <span *ngSwitchCase="'Resort'" class="badge badge-pill badge-dark">{{ location.type }}</span>
+                    <span *ngSwitchCase="'Fantasy town'" class="badge badge-pill badge-dark">{{ location.type }}</span>
+                    <span *ngSwitchCase="'Dream'" class="badge badge-pill badge-dark">{{ location.type }}</span>
+                    <span *ngSwitchCase="'Space station'" class="badge badge-pill badge-dark">{{ location.type }}</span>
+                    <span *ngSwitchCase="'Microverse'" class="badge badge-pill badge-dark">{{ location.type }}</span>
+                    <span *ngSwitchCase="'Cluster'" class="badge badge-pill badge-dark">{{ location.type }}</span>
+                    <span *ngSwitchCase="'TV'" class="badge badge-pill badge-dark">{{ location.type }}</span>
+                </span>
+            <br>
+                <small class="card-text">Residents: </small>
+                <span>
+                    <span class="badge badge-pill badge-info">{{ location.residents.length }}</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+

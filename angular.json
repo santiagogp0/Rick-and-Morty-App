@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "RickAndMortyApp"
+    }
+  },
+  "defaultProject": "RickAndMortyApp",
+  "cli": {
+    "analytics": "9e4a652f-17fb-4de5-85ec-b638ba42c2d3"
+  }
 }
