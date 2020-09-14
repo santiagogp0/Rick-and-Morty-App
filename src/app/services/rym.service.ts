@@ -28,4 +28,12 @@ export class ryMService {
     return this.http.get(`${ this.mainUrl }location/?name=${query}`);
   }
 
+  public getCharactersById( id: string ) {
+    return this.http.get(`${ this.mainUrl }character/${id}`);
+  }
+
+  public getLocationById( id: string ) {
+    return this.http.get(`${ this.mainUrl }location/${id}`);
+  }
+
 }

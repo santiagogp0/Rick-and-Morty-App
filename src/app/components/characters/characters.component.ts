@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ryMService } from 'src/app/services/rym.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class CharactersComponent implements OnInit {
   public loading: boolean;
 
   constructor(
-    private rYMSrv: ryMService
+    private rYMSrv: ryMService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {

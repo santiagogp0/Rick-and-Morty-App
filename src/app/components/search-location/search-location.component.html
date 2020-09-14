@@ -1,1 +1,34 @@
-<p>search-location works!</p>
+<div class="m-5 animate__animated animate__fadeIn">
+    <h2 class="text-center whiteText">Search a location</h2>
+</div>
+
+<div class="row animate__animated animate_fadeIn">
+    <div class="col mr-5 ml-5">
+        <input #query type="text" (keyup)="searchLocation(query.value)" class="form-control" placeholder="Search location">
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="alert alert-warning" role="alert" *ngIf="notFound">
+      <h4 class="alert-heading">Error 404</h4>
+      <p>There's nothing called {{ query.value }}</p>
+      <hr>
+      <p class="mb-0">Probably here's the thing you were searching</p>
+    </div>
+</div>
+
+<app-load *ngIf="loading"></app-load>
+
+<div class="container">
+    <div class="card-columns m-5" *ngIf="!loading">
+        <div class="card puntero animate__animated animate__bounceIn" *ngFor="let location of locationList">
+          <div class="card-body">
+            <h5 class="card-title">{{ location.name }}</h5>
+            <small class="card-text">Type: </small>
+                <span class="badge badge-pill badge-secondary">{{ location.type }}</span>
+            <br>
+          </div>
+        </div>
+    </div>
+</div>
+

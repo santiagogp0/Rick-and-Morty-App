@@ -14,6 +14,8 @@ import { ryMService } from './services/rym.service';
 import { SearchCharacterComponent } from './components/search-character/search-character.component';
 import { SearchLocationComponent } from './components/search-location/search-location.component';
 import { LoadComponent } from './components/load/load.component';
+import { DragNDropComponent } from './components/drag-n-drop/drag-n-drop.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { LoadComponent } from './components/load/load.component';
     NavbarComponent,
     SearchCharacterComponent,
     SearchLocationComponent,
-    LoadComponent
+    LoadComponent,
+    DragNDropComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
   ],
   providers: [ ryMService ],
   bootstrap: [AppComponent]

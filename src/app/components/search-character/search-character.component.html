@@ -1,10 +1,19 @@
 <div class="m-5 animate__animated animate__fadeIn">
-    <h2 class="text-center">Search you favorite character</h2>
+    <h2 class="text-center whiteText">Search you favorite character</h2>
 </div>
 
 <div class="row animate__animated animate_fadeIn">
-    <div class="col">
-        <input #query type="text" (keyup)="searchCharacter(query)" class="form-control" placeholder="Search character">
+    <div class="col mr-5 ml-5">
+        <input #query type="text" (keyup)="searchCharacter(query.value)" class="form-control" placeholder="Search character">
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="alert alert-warning" role="alert" *ngIf="notFound">
+      <h4 class="alert-heading">Error 404</h4>
+      <p>There's nothing called {{ query.value }}</p>
+      <hr>
+      <p class="mb-0">Probably here's the thing you were searching</p>
     </div>
 </div>
 

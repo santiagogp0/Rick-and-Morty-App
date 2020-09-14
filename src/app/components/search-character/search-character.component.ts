@@ -10,6 +10,7 @@ export class SearchCharacterComponent implements OnInit {
 
   charactersList: any[] = [];
   loading: boolean;
+  notFound: boolean;
 
   constructor(
     private rYMSrv: ryMService
@@ -19,12 +20,13 @@ export class SearchCharacterComponent implements OnInit {
   }
 
   searchCharacter( query: string ) {
-    console.log( query );
-    this.loading = true;
-    this.rYMSrv.searchCharacter( query ).subscribe( (data: any) => {
-      this.charactersList = data;
-      this.loading = false;
-    } );
+      this.loading = true;
+      this.rYMSrv.searchCharacter( query ).subscribe( (data: any) => {
+        this.charactersList = data.results;
+        this.loading = false;
+      }, error => {
+        this.notFound = true;
+      });
   }
 
 }
